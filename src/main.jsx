@@ -1,28 +1,16 @@
-// React v16 JSX Runtime classic
-
-// React v17 JSX Runtime automatic
-// 모듈 파일에서 import React from 'react' 사용 ❌
-
-// React v18.2.0
-
 import './styles/globals.css';
 import { createRoot } from 'react-dom/client';
 
-const Button = (props) => {
+// 리액트 엘리먼트(요소)를 반환하는 함수
+// 함수는 재사용 목적으로 사용된다.
+// 일반 함수 (전달 인수(arguments)를 받아 재사용)
+// 리액트 함수 컴포넌트 (속성(props)을 전달 받아 재사용)
+function Button(props) {
   return (
     <button type="button" className="Button">
       {props.children}
     </button>
   );
-};
+}
 
-createRoot(document.getElementById('root')).render(
-  <div className="App">
-    <h1 className="Greeting">
-      <span className="message">헬로!</span>{' '}
-      <span className="libraryName">리액트</span>
-    </h1>
-    <Button>시작하기</Button>
-    <Button>패키지 설치</Button>
-  </div>
-);
+createRoot(document.getElementById('root')).render();
