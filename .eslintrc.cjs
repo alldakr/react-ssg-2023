@@ -4,12 +4,24 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended'],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    'prettier',
+  ],
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
   plugins: ['react'],
-  rules: {},
+  rules: {
+    'react/prop-types': 'off',
+  },
 };

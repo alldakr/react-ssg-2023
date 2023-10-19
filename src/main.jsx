@@ -1,11 +1,17 @@
+// React v16 JSX Runtime classic
+
+// React v17 JSX Runtime automatic
+// 모듈 파일에서 import React from 'react' 사용 ❌
+
+// React v18.2.0
+
 import './styles/globals.css';
-import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 
 const Button = (props) => {
   return (
     <button type="button" className="Button">
-      { props.children }
+      {props.children}
     </button>
   );
 };

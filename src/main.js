@@ -12,7 +12,7 @@ const headlineElement = createElement(
   // [child1, child2, ...]
   createElement('span', {}, '헬로'),
   ' ',
-  createElement('span', {}, '리액트!'),
+  createElement('span', {}, '리액트!')
 );
 
 // 생성된 리액트 요소
@@ -30,9 +30,7 @@ if (rootElement) {
   // 리액트 돔의 루트 생성
   const reactDomRoot = createRoot(rootElement);
   // console.log(reactDomRoot); // { render, unmount }
-  reactDomRoot.render(
-    headlineElement
-  );
+  reactDomRoot.render(headlineElement);
 } else {
   // 존재하지 않을 경우
   alert('문서에 #root 요소가 존재하지 않습니다.');
