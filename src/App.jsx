@@ -1,4 +1,5 @@
 import Button from './button/Button';
+import { getPublic } from './utils';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       </h1>
       <Button title="getting started">시작하기</Button>
       <Button title="installing packages">패키지 설치</Button>
+      <img src={getPublic('loading-screen.svg')} alt="로딩 중..." />
     </div>
   );
 }
