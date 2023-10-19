@@ -1,3 +1,5 @@
+import Button from './button/Button';
+
 function App() {
   return (
     <div className="App">
@@ -5,8 +7,8 @@ function App() {
         <span className="message">헬로!</span>{' '}
         <span className="libraryName">리액트</span>
       </h1>
-      <Button>시작하기</Button>
-      <Button>패키지 설치</Button>
+      <Button title="getting started">시작하기</Button>
+      <Button title="installing packages">패키지 설치</Button>
     </div>
   );
 }

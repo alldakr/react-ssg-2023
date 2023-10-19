@@ -12,6 +12,10 @@ const viteConfig = defineConfig({
     host: true,
     port: 3000,
   },
+  // CSS 구성
+  css: {
+    devSourcemap: true,
+  },
 });
 
 // 모듈 기본 내보내기
