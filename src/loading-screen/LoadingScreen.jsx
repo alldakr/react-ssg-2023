@@ -1,8 +1,6 @@
 import './LoadingScreen.css';
 import loadingScreenPath from '../assets/loading-screen.svg';
 
-console.log(loadingScreenPath); // 이미지 동적 경로 출력
-
 function LoadingScreen() {
   // 상대 경로로 에셋을 불러오면 안된다.
   // 동적 에셋은 import 구문으로 불러와야 한다.
