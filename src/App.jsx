@@ -1,5 +1,6 @@
-import Button from './button/Button';
+// import Button from './button/Button';
 import LoadingScreen from './loading-screen/LoadingScreen';
+import ToggleButton from './toggleButton/ToggleButton';
 
 function App() {
   // 조건 변수
@@ -30,8 +31,10 @@ function App() {
             <span className="message">헬로!</span>{' '}
             <span className="libraryName">리액트</span>
           </h1>
-          <Button title="getting started">시작하기</Button>
-          <Button title="installing packages">패키지 설치</Button>
+          <ToggleButton on />
+          <ToggleButton />
+          {/* <Button title="getting started">시작하기</Button> */}
+          {/* <Button title="installing packages">패키지 설치</Button> */}
         </div>
       )}
     </div>
