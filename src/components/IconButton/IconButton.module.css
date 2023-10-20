@@ -1,0 +1,107 @@
+.component {
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--neutral-100, #F8F9FA);
+
+  &.primary {
+    background: var(--neutral-900, #212529);
+  }
+
+  &.sm {
+    padding: 0.125rem 0.75rem;
+    color: var(--neutral-100, #F8F9FA);
+    font-size: 0.875rem;
+  }
+
+  &.md {
+    padding: 0.25rem 1rem;
+    color: var(--neutral-100, #F8F9FA);
+    font-size: 0.875rem;
+  }
+
+  &.lg {
+    padding: 0.25rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  &:hover {
+    background: var(--neutral-800, #343A40);
+  }
+
+  &:active {
+    background: var(--black, #000);
+  }
+
+  &:focus {
+    outline: none;
+    background: var(--neutral-900, #212529);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--blue-300, #75B6FF);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background: var(--neutral-500, #ADB5BD);
+  }
+
+  &.rounded-none {
+    border-radius: 0;
+  }
+
+  &.rounded-sm {
+    border-radius: 2px;
+  }
+
+  &.rounded-md {
+    border-radius: 4px;
+  }
+
+  &.rounded-lg {
+    border-radius: 8px;
+  }
+
+  &.rounded-full {
+    border-radius: 1000px;
+  }
+
+  &.secondary {
+    border: 1px solid var(--neutral-500, #ADB5BD);
+    background: var(--white, #FFF);
+    color: var(--neutral-700, #495057);    
+
+    &:hover {
+      border-color: var(--neutral-400, #CED4DA);
+      background: var(--neutral-200, #E9ECEF);
+    }
+  
+    &:active {
+      border-color: var(--black, #000);
+      background: var(--white, #FFF);
+    }
+  
+    &:focus {
+      outline: none;
+      background: var(--neutral-100, #F8F9FA);
+    }
+  
+    &:focus-visible {
+      outline: 2px solid var(--blue-300, #75B6FF);
+    }
+  
+    &:disabled {
+      cursor: not-allowed;
+      border-color: var(--neutral-200, #E9ECEF);
+      background: var(--neutral-100, #F8F9FA);
+    }
+  }
+
+}
