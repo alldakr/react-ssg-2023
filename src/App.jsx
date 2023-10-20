@@ -1,10 +1,12 @@
-import { Button, LoadingScreen, ToggleButton } from '@/components';
+import { Icon, Button, LoadingScreen, ToggleButton } from '@/components';
 
 function App() {
   const isLoading = !true;
 
   return (
     <div>
+      <Icon type="plus" mode="primary" />
+      <Icon type="minus" mode="secondary" size={240} />
       <p hidden>상태 메시지: {isLoading ? '로딩 중...' : '로딩 완료'}</p>
       {isLoading ? (
         <LoadingScreen />
