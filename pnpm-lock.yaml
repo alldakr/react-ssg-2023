@@ -28,6 +28,9 @@ devDependencies:
   prettier:
     specifier: 3.0.3
     version: 3.0.3
+  prop-types:
+    specifier: 15.8.1
+    version: 15.8.1
   vite:
     specifier: 4.5.0
     version: 4.5.0

@@ -5,8 +5,9 @@ function App() {
 
   return (
     <div>
-      <Icon type="plus" mode="primary" />
-      <Icon type="minus" mode="secondary" size={240} />
+      <Icon mode="secondary" />
+      <Icon type="minus" />
+      <Icon size={20} />
       <p hidden>상태 메시지: {isLoading ? '로딩 중...' : '로딩 완료'}</p>
       {isLoading ? (
         <LoadingScreen />

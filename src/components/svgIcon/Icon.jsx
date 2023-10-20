@@ -1,12 +1,15 @@
+import PropTypes from 'prop-types';
 import './Icon.css';
+
+console.log(PropTypes); // { string, number, bool, func, array, object, ... }
 
 // React ❌ HTML
 // React ✅ JSX
 
 function Icon({
-  mode = 'primary' /* primary or secondary */,
-  type = 'plus' /* plus or minus */,
-  size = 16,
+  mode = 'primary' /* 'primary' or 'secondary' */,
+  type = 'plus' /* 'plus' or 'minus' */,
+  size = 16, // number
 }) {
   const fillColor = mode.includes('primary') ? '#F8F9FA' : '#495057';
 
@@ -34,6 +37,12 @@ function Icon({
     </svg>
   );
 }
+
+Icon.propTypes = {
+  mode: PropTypes.oneOf(['primary', 'secondary']),
+  type: PropTypes.oneOf(['plus', 'minus']),
+  size: PropTypes.number,
+};
 
 function Plus({ fill }) {
   return (
