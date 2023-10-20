@@ -1,0 +1,55 @@
+{
+  "title": "Listen Now",
+  "description": "Top picks for you. Updated daily.",
+  "items": [
+    {
+      "id": "music-1614113489855-66422ad300a4",
+      "title": "React Rendezvous",
+      "singer": "Ethan Byte",
+      "photo": "photo-1614113489855-66422ad300a4.jpg",
+      "like": 9120
+    },
+    {
+      "id": "music-1615247001958-f4bc92fa6a4a",
+      "title": "Thinking Components",
+      "singer": "Lena Logic",
+      "photo": "photo-1615247001958-f4bc92fa6a4a.jpg",
+      "like": 7680
+    },
+    {
+      "id": "music-1446185250204-f94591f7d702",
+      "title": "Stateful Symphony",
+      "singer": "Beth Binary",
+      "photo": "photo-1446185250204-f94591f7d702.jpg",
+      "like": 8101
+    },
+    {
+      "id": "music-1468817814611-b7edf94b5d60",
+      "title": "Async Awakenings",
+      "singer": "Nina Netcode",
+      "photo": "photo-1468817814611-b7edf94b5d60.jpg",
+      "like": 6987
+    },
+    {
+      "id": "music-1468817814611-b7edf94b5d60",
+      "title": "Beautiful Melody",
+      "singer": "Lena Logic",
+      "photo": "photo-1490300472339-79e4adc6be4a.jpg",
+      "like": 10834
+    },
+    {
+      "id": "music-1513745405825-efaf9a49315f",
+      "title": "Functional Fury",
+      "singer": "Beth Binary",
+      "photo": "photo-1513745405825-efaf9a49315f.jpg",
+      "like": 4732
+    },
+    {
+      "id": "music-1528143358888-6d3c7f67bd5d",
+      "title": "The Arot of Reusability",
+      "singer": "Ben Jones",
+      "photo": "photo-1528143358888-6d3c7f67bd5d.jpg",
+      "like": 5907
+    }
+  ]
+}

@@ -1,26 +1,23 @@
-import {
-  Button,
-  Icon,
-  IconButton,
-  LoadingScreen,
-  ToggleButton,
-} from '@/components';
+import { Button, LoadingScreen, ToggleButton } from '@/components';
+import musicList from '@/api/music.json';
 
 function App() {
   const isLoading = !true;
 
   return (
     <div>
-      <IconButton disabled data-id="fkdfjdk" title="blob">
-        추가
-      </IconButton>
-      <IconButton
-        rounded="full"
-        mode="secondary"
-        iconLeft={<Icon type="plus" mode="secondary" />}
-      >
-        추가
-      </IconButton>
+      <h3>{musicList.title}</h3>
+      <ul>
+        {musicList.items.map(({ id, title, like, singer }) => (
+          <li key={id}>
+            <strong>
+              {title} ({like})
+            </strong>
+            <em>{singer}</em>
+          </li>
+        ))}
+      </ul>
+
       <p hidden>상태 메시지: {isLoading ? '로딩 중...' : '로딩 완료'}</p>
       {isLoading ? (
         <LoadingScreen />
