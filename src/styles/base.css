@@ -2,4 +2,9 @@ body {
   margin: 2rem;
   background-color: var(--color-background);
   color: var(--color-forground);
+  font: 1rem/1.5 "SUIT Variable", Verdana, Arial, Sans-Serif;
+
+  & button, input, textarea {
+    font-family: inherit;
+  }
 }
