@@ -1,6 +1,4 @@
-import Button from './button/Button';
-import LoadingScreen from './loading-screen/LoadingScreen';
-import ToggleButton from './toggleButton/ToggleButton';
+import { Button, LoadingScreen, ToggleButton } from '@/components';
 
 function App() {
   const isLoading = !true;

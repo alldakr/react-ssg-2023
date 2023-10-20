@@ -1,5 +1,5 @@
 import './LoadingScreen.css';
-import loadingScreenPath from '../assets/loading-screen.svg';
+import loadingScreenPath from '@/assets/loading-screen.svg';
 
 function LoadingScreen() {
   // 상대 경로로 에셋을 불러오면 안된다.

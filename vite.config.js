@@ -1,5 +1,7 @@
 // 패키지 모듈 불러오기
 import { defineConfig } from 'vite';
+import path from 'node:path';
+
 // 플러그인 모듈 불러오기
 import reactPlugin from '@vitejs/plugin-react';
 
@@ -15,6 +17,14 @@ const viteConfig = defineConfig({
   // CSS 구성
   css: {
     devSourcemap: true,
+  },
+  // 절대 경로 구성
+  // resolve.alias
+  resolve: {
+    // object or array format
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
   },
 });
 
