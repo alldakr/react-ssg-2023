@@ -1,11 +1,10 @@
-import { bool } from 'prop-types';
 import './ToggleButton.css';
 
-ToggleButton.propTypes = {
-  on: bool,
+type Props = {
+  on?: boolean;
 };
 
-function ToggleButton({ on = false }) {
+function ToggleButton({ on = false }: Props): JSX.Element {
   return (
     <button
       type="button"

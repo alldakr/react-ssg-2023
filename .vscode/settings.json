@@ -97,11 +97,11 @@
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features",
@@ -124,8 +124,8 @@
     "*": false,
     "javascript": false,
     "javascriptreact": false,
-    "typescript": false,
-    "typescriptreact": false,
+    "typescript": true,
+    "typescriptreact": true,
   },
 
 }

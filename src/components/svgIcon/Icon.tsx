@@ -1,13 +1,16 @@
-import { oneOf, number, string } from 'prop-types';
 import './Icon.css';
 
-Icon.propTypes = {
-  mode: oneOf(['primary', 'secondary']),
-  type: oneOf(['plus', 'minus']),
-  size: number,
+type Props = {
+  mode?: 'primary' | 'secondary';
+  type?: 'plus' | 'minus';
+  size?: number;
 };
 
-function Icon({ mode = 'primary', type = 'plus', size = 16 }) {
+function Icon({
+  mode = 'primary',
+  type = 'plus',
+  size = 16,
+}: Props): JSX.Element {
   const fillColor = mode.includes('primary') ? '#F8F9FA' : '#495057';
 
   let NestedComponent = null;
@@ -35,11 +38,11 @@ function Icon({ mode = 'primary', type = 'plus', size = 16 }) {
   );
 }
 
-Plus.propTypes = {
-  fill: string,
-};
+interface IconProps {
+  fill: string;
+}
 
-function Plus({ fill }) {
+function Plus({ fill }: IconProps): JSX.Element {
   return (
     <>
       <path
@@ -56,9 +59,7 @@ function Plus({ fill }) {
   );
 }
 
-Minus.propTypes = Plus.propTypes;
-
-function Minus({ fill }) {
+function Minus({ fill }: IconProps): JSX.Element {
   return (
     <>
       <path

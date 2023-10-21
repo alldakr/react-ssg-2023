@@ -18,7 +18,7 @@ const viteConfig = defineConfig({
   css: {
     devSourcemap: true,
     modules: {
-      // generateScopedName: '[hash:8]',
+      generateScopedName: '[local]_[contenthash:5]',
     },
   },
   // 절대 경로 구성

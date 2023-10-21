@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es2021: true,
@@ -9,19 +10,20 @@ module.exports = {
       version: 'detect',
     },
   },
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
+    'plugin:@typescript-eslint/recommended',
     'prettier',
   ],
   overrides: [],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react'],
-  rules: {
-    // 'react/prop-types': 'off',
-  },
+  plugins: ['react', '@typescript-eslint'],
+  rules: {},
 };

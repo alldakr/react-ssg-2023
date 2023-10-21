@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint ./src --ext js,jsx --ignore-path .gitignore",
     "format:check": "prettier ./src --check --ignore-path .gitignore",
@@ -21,12 +21,15 @@
     "@types/prop-types": "15.7.9",
     "@types/react": "18.2.31",
     "@types/react-dom": "18.2.14",
+    "@typescript-eslint/eslint-plugin": "6.8.0",
+    "@typescript-eslint/parser": "6.8.0",
     "@vitejs/plugin-react": "4.1.0",
     "eslint": "8.51.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-react": "7.33.2",
     "prettier": "3.0.3",
     "prop-types": "15.8.1",
+    "typescript": "5.2.2",
     "vite": "4.5.0"
   }
 }
