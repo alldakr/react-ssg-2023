@@ -1,16 +1,13 @@
-import PropTypes from 'prop-types';
+import { oneOf, number, string } from 'prop-types';
 import './Icon.css';
 
-console.log(PropTypes); // { string, number, bool, func, array, object, ... }
+Icon.propTypes = {
+  mode: oneOf(['primary', 'secondary']),
+  type: oneOf(['plus', 'minus']),
+  size: number,
+};
 
-// React ❌ HTML
-// React ✅ JSX
-
-function Icon({
-  mode = 'primary' /* 'primary' or 'secondary' */,
-  type = 'plus' /* 'plus' or 'minus' */,
-  size = 16, // number
-}) {
+function Icon({ mode = 'primary', type = 'plus', size = 16 }) {
   const fillColor = mode.includes('primary') ? '#F8F9FA' : '#495057';
 
   let NestedComponent = null;
@@ -38,10 +35,8 @@ function Icon({
   );
 }
 
-Icon.propTypes = {
-  mode: PropTypes.oneOf(['primary', 'secondary']),
-  type: PropTypes.oneOf(['plus', 'minus']),
-  size: PropTypes.number,
+Plus.propTypes = {
+  fill: string,
 };
 
 function Plus({ fill }) {
@@ -60,6 +55,8 @@ function Plus({ fill }) {
     </>
   );
 }
+
+Minus.propTypes = Plus.propTypes;
 
 function Minus({ fill }) {
   return (

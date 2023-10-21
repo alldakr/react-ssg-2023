@@ -1,5 +1,15 @@
-import { oneOf, element, string } from 'prop-types';
+import { oneOf, element, node, string } from 'prop-types';
 import styles from './IconButton.module.css';
+
+IconButton.propTypes = {
+  mode: oneOf(['primary', 'secondary']),
+  size: oneOf(['sm', 'md', 'lg']),
+  rounded: oneOf(['none', 'sm', 'md', 'lg', 'full']),
+  iconLeft: element,
+  iconRight: element,
+  label: string,
+  children: node.isRequired,
+};
 
 function IconButton({
   mode = 'primary',
@@ -7,18 +17,13 @@ function IconButton({
   rounded = 'none',
   iconLeft = null,
   iconRight = null,
-  label = '',
+  label = null,
   children,
   ...restProps
 }) {
-  let classNames = styles.component;
-
-  classNames += ' ';
-  classNames += mode.includes('primary') ? styles.primary : styles.secondary;
-  classNames += ' ';
-  classNames += styles[size];
-  classNames += ' ';
-  classNames += styles[`rounded-${rounded}`];
+  const classNames = `${styles.component} ${styles[mode]} ${styles[size]} ${
+    styles[`rounded-${rounded}`]
+  }`;
 
   return (
     <button
@@ -34,14 +39,5 @@ function IconButton({
     </button>
   );
 }
-
-IconButton.propTypes = {
-  mode: oneOf(['primary', 'secondary']),
-  size: oneOf(['sm', 'md', 'lg']),
-  rounded: oneOf(['none', 'sm', 'md', 'lg', 'full']),
-  iconLeft: element,
-  iconRight: element,
-  label: string,
-};
 
 export default IconButton;

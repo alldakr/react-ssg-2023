@@ -1,9 +1,15 @@
+import { string, node } from 'prop-types';
 import './Button.css';
 
-function Button(props /* { title, children } */) {
+Button.propTypes = {
+  title: string,
+  children: node.isRequired,
+};
+
+function Button({ title, children }) {
   return (
-    <button type="button" className="Button" title={props.title}>
-      {props.children}
+    <button type="button" className="Button" title={title}>
+      {children}
     </button>
   );
 }

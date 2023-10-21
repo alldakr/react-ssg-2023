@@ -22,9 +22,7 @@ const viteConfig = defineConfig({
     },
   },
   // 절대 경로 구성
-  // resolve.alias
   resolve: {
-    // object or array format
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
