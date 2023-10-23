@@ -6,12 +6,13 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
+    /* 절대 경로 설정 */
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     },
 
-    /* Bundler mode */
+    /* 번들러 모드 */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
@@ -19,14 +20,12 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    /* Linting */
+    /* 린팅 */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-
-    "typeRoots": ["./@types"]
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["./src/**/*"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

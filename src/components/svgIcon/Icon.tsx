@@ -1,6 +1,6 @@
 import './Icon.css';
 
-type Props = {
+type IconProps = {
   mode?: 'primary' | 'secondary';
   type?: 'plus' | 'minus';
   size?: number;
@@ -10,7 +10,7 @@ function Icon({
   mode = 'primary',
   type = 'plus',
   size = 16,
-}: Props): JSX.Element {
+}: IconProps): JSX.Element {
   const fillColor = mode.includes('primary') ? '#F8F9FA' : '#495057';
 
   let NestedComponent = null;
@@ -38,11 +38,11 @@ function Icon({
   );
 }
 
-interface IconProps {
+type PathProps = {
   fill: string;
 }
 
-function Plus({ fill }: IconProps): JSX.Element {
+function Plus({ fill }: PathProps): JSX.Element {
   return (
     <>
       <path
@@ -59,7 +59,7 @@ function Plus({ fill }: IconProps): JSX.Element {
   );
 }
 
-function Minus({ fill }: IconProps): JSX.Element {
+function Minus({ fill }: PathProps): JSX.Element {
   return (
     <>
       <path

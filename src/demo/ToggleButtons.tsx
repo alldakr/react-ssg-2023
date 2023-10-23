@@ -1,7 +1,7 @@
-import type { PropsWithChildren } from '@/@types/global';
+import type { RestPropsWithChildren } from '@/types';
 import { ToggleButton } from '@/components';
 
-export function ToggleButtons(props: PropsWithChildren): JSX.Element {
+export function ToggleButtons(props: RestPropsWithChildren): JSX.Element {
   return (
     <div {...props}>
       <ToggleButton on />

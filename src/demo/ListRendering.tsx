@@ -1,6 +1,6 @@
-import { PropsWithChildren, Styles } from '@/@types/global';
 import musicList from '@/api/music.json';
 import { Icon, IconButton } from '@/components';
+import type { Styles, RestPropsWithChildren } from '@/types';
 
 const styles: Styles = {
   headline: {
@@ -30,7 +30,7 @@ const styles: Styles = {
   },
 };
 
-export function ListRendering(props: PropsWithChildren): JSX.Element {
+export function ListRendering(props: RestPropsWithChildren): JSX.Element {
   return (
     <div lang="en" {...props}>
       <h3 style={styles.headline}>{musicList.title}</h3>

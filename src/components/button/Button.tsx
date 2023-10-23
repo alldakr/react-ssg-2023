@@ -1,9 +1,9 @@
-import { PropsWithChildren } from '@/@types/global';
+import type { PropsWithChildren } from 'react';
 import './Button.css';
 
-type Props = {
+type Props = PropsWithChildren<{
   title?: string;
-} & PropsWithChildren;
+}>;
 
 function Button({ title, children }: Props): JSX.Element {
   return (

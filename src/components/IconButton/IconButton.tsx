@@ -1,15 +1,14 @@
-import { ReactElement } from 'react';
+import type { PropsWithChildren, ReactElement } from 'react';
 import styles from './IconButton.module.css';
-import { PropsWithChildren } from '@/@types/global';
 
-type Props = {
+type Props = PropsWithChildren<{
   mode?: 'primary' | 'secondary';
   size?: 'sm' | 'md' | 'lg';
   rounded?: 'none' | 'sm' | 'md' | 'lg' | 'full';
   label?: string;
   iconLeft?: ReactElement | null;
   iconRight?: ReactElement | null;
-} & PropsWithChildren;
+}>;
 
 function IconButton({
   mode = 'primary',
@@ -21,9 +20,7 @@ function IconButton({
   children,
   ...restProps
 }: Props): JSX.Element {
-  const classNames: string = `${styles.component} ${styles[mode]} ${
-    styles[size]
-  } ${styles[`rounded-${rounded}`]}`;
+  const classNames: string = `${styles.component} ${styles[mode]} ${styles[size]} ${styles[`rounded-${rounded}`]}`;
 
   return (
     <button

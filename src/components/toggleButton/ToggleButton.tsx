@@ -1,17 +1,18 @@
+import type { PropsWithChildren } from 'react';
 import './ToggleButton.css';
 
-type Props = {
+type Props = PropsWithChildren<{
   on?: boolean;
-};
+}>;
 
-function ToggleButton({ on = false }: Props): JSX.Element {
+function ToggleButton({ on = false, children }: Props): JSX.Element {
   return (
     <button
       type="button"
       className={`ToggleButton ${on ? 'on' : ''}`.trim()}
       aria-label={on ? '끄기' : '켜기'}
     >
-      {on ? 'OFF' : 'ON'}
+      {children ? children : on ? 'OFF' : 'ON'}
     </button>
   );
 }

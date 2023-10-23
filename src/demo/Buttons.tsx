@@ -1,7 +1,7 @@
-import type { PropsWithChildren } from '@/@types/global';
+import type { RestPropsWithChildren } from '@/types';
 import { Button } from '@/components';
 
-export function Buttons(props: PropsWithChildren): JSX.Element {
+export function Buttons(props: RestPropsWithChildren): JSX.Element {
   return (
     <div {...props}>
       <Button title="getting started">시작하기</Button>
