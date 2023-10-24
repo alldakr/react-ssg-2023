@@ -1,0 +1,33 @@
+.component {
+  overflow-y: auto;
+  min-width: 200px;
+  /* max-height: calc(100vh - 216px); */
+  border-right: 1px solid var(--neutral--200);
+  scroll-behavior: smooth;
+  scroll-snap-align: center;
+  scroll-snap-type: block;
+
+  & ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  & li {
+    border-bottom: 1px solid var(--neutral--200);
+    padding: 2px;
+  }
+
+  & a {
+    box-sizing: border-box;
+    display: inline-flex;
+    width: 100%;
+    padding: 14px;
+    text-decoration: none;
+    color: var(--primary--500);
+
+    &:hover {
+      color: var(--primary--700);
+    }
+  }
+}

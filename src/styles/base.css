@@ -1,5 +1,5 @@
 body {
-  margin: 2rem;
+  margin: 0;
   background-color: var(--color-background);
   color: var(--color-forground);
   font: 1rem/1.5 "SUIT Variable", Verdana, Arial, Sans-Serif;
@@ -7,4 +7,21 @@ body {
   & button, input, textarea {
     font-family: inherit;
   }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neutral--200);
+  border-radius: 1000px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--primary--400);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neutral--100);
 }

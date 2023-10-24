@@ -1,0 +1,13 @@
+.component {
+  padding: 24px;
+  border-top: 1px solid rgba(0 0 0 / 3%);
+  box-shadow: 0 -2px 8px color-mix(in srgb, var(--primary--500) 10%, var(--white) 80%);
+  background: var(--white);
+  
+  & small {
+    font-style: normal;
+    font-size: 16px;
+    color: var(--primary--500);
+    font-weight: 700;
+  }
+}

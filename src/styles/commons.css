@@ -1,0 +1,62 @@
+.output {
+  font-family: inherit;
+  padding: 8px 16px;
+  border: 2px solid var(--primary--200);
+  border-radius: 1000px;
+  box-shadow: 0 4px 4px var(--primary--100);
+  color: var(--primary--600);
+}
+
+.container {
+  margin-inline: auto;
+
+  @media (min-width: 640px) {
+    width: 620px;
+  }
+  
+  @media (min-width: 960px) {
+    width: 940px;
+  }
+  
+  @media (min-width: 1024px) {
+    width: 960px;
+  }
+  
+  @media (min-width: 1280px) {
+    width: 1140px;
+  }
+  
+  @media (min-width: 1440px) {
+    width: 1280px;
+  }
+  
+  @media (min-width: 1920px) {
+    width: 1440px;
+  }
+}
+
+.sr-only {
+  overflow: hidden;
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: circle(0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  white-space: nowrap;
+}
+
+caption.sr-only {
+  position: static;
+}
+
+.sr-only.focusable:focus {
+  visibility: initial;
+  position: static;
+  clip: auto;
+  clip-path: unset;
+  width: initial;
+  height: initial;
+  margin: initial;
+  white-space: initial;
+}

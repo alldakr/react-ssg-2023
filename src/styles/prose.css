@@ -1,0 +1,9 @@
+.prose {
+  padding-top: 4px;
+  padding-left: 24px;
+
+  & h3 {
+    font-size: 20px;
+    color: var(--primary--500);
+  }
+}

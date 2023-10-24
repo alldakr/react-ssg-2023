@@ -1,0 +1,13 @@
+.component {
+  display: flex;
+  flex: 1;
+  gap: 4px;
+  
+  &.vertical {
+    flex-flow: column;
+  }
+
+  &.horizontal {
+    flex-flow: row;
+  }
+}

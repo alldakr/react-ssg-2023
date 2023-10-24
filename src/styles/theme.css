@@ -59,6 +59,16 @@
   --danger--300: #FF6C4C;
   --danger--200: #FF8166;
   --danger--100: #FF9680;
+  
+  --primary--100: #cee5ed;
+  --primary--200: #9dcbdb;
+  --primary--300: #6cb2c8;
+  --primary--400: #3b98b6;
+  --primary--500: #0a7ea4;
+  --primary--600: #086583;
+  --primary--700: #064c62;
+  --primary--800: #043242;
+  --primary--900: #021921;
 
   /* Text-size styles */
   /* base size: body-2---regular (16px) */
