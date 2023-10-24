@@ -6,9 +6,9 @@ Button.propTypes = {
   children: node.isRequired,
 };
 
-function Button({ title, children }) {
+function Button({ title, children, ...restProps }) {
   return (
-    <button type="button" className="Button" title={title}>
+    <button type="button" className="Button" title={title} {...restProps}>
       {children}
     </button>
   );

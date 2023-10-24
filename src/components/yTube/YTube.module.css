@@ -1,0 +1,20 @@
+.component {
+  --ratio-h: 16;
+  --ratio-v: 9;
+  --radius: 6px;
+
+  overflow: hidden;
+  position: relative;
+  height: 0 !important;
+  padding-bottom: calc(var(--ratio-v) / var(--ratio-h) * 100%);
+  border-radius: var(--radius);
+
+  & iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}

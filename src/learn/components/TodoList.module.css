@@ -1,0 +1,76 @@
+.component {
+
+  & h4 {
+    margin: 24px 0 8px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--primary--600);
+  }
+
+  & form {
+    display: flex;
+    flex-flow: row;
+    gap: 4px;
+  }
+
+  & input {
+    padding: 0.5em 0.8em;
+    border-radius: 4px;
+    border: 2px solid var(--neutral--400);
+    color: var(--primary--600);
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary--400);
+    }
+
+    &::placeholder {
+      color: var(--neutral--500);
+    }
+  }
+
+  & button {
+    cursor: pointer;
+    border: 0;
+    padding: 0.4em 1.2em;
+    border-radius: 4px;
+    background: var(--primary--500);
+    color: var(--white);
+
+    &:hover {
+      background: var(--primary--600);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      background: var(--neutral--400);
+      color: var(--neutral--600);
+    }
+  }
+
+  & ul {
+    list-style: none;
+    margin: 20px 0;
+    padding-left: 0;
+    display: flex;
+    flex-flow: column;
+    gap: 4px;
+
+    & label {
+      display: flex;
+      gap: 4px;
+      color: var(--primary--500);
+      font-size: 16px;
+      
+      &.done {
+        text-decoration: line-through;
+        color: var(--neutral--500);
+      }
+    }
+    
+    & input {
+      accent-color: currentColor;
+      color: inherit;
+    }
+  }
+}

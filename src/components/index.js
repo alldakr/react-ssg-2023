@@ -1,3 +1,4 @@
+export { default as YTube } from './yTube/YTube';
 export { default as Icon } from './svgIcon/Icon';
 export { default as Button } from './button/Button';
 export { default as IconButton } from './IconButton/IconButton';

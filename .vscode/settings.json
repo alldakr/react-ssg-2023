@@ -93,7 +93,7 @@
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    // "editor.formatOnSave": true
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -112,7 +112,7 @@
     "editor.formatOnSave": false
   },
 
-  "editor.formatOnSave": false,
+  // "editor.formatOnSave": false,
   "errorLens.enabled": false,
   "eslint.enable": true,
 

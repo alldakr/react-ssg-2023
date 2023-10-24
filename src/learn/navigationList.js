@@ -1,5 +1,5 @@
 import KeepingComponentsPure from './01-keeping-components-pure';
-import UnderstandingUITree from './02-UnderstandingUITree';
+import RespondingToEvents from './02-responding-to-events';
 
 export const navigationList = [
   {
@@ -9,7 +9,7 @@ export const navigationList = [
   },
   {
     id: 'learn-102',
-    title: 'UI 트리 이해하기',
-    PageElement: UnderstandingUITree,
+    title: '이벤트 응답',
+    PageElement: RespondingToEvents,
   },
 ];
