@@ -1,0 +1,28 @@
+.component {
+  overflow-x: scroll;
+  list-style-type: none;
+  margin: 0;
+
+  display: flex;
+  align-items: flex-start;
+  align-self: stretch;
+  gap: 1.25rem;
+  padding: 1.5rem 0;
+}
+
+.component::-webkit-scrollbar {
+  height: 2px;
+}
+
+.component::-webkit-scrollbar-thumb {
+  background: var(--neutral--400, #E9ECEF);
+  border-radius: 100px;
+}
+
+.component::-webkit-scrollbar-thumb:hover {
+  background: var(--blue--300, #75B6FF);
+}
+
+.component::-webkit-scrollbar-track {
+  background: var(--neutral--100, #F8F9FA);
+}

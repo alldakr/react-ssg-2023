@@ -1,0 +1,37 @@
+.component {
+  margin: 0;
+  list-style-type: none;
+
+  display: inline-flex;
+  flex-flow: row nowrap;
+  gap: 16px;
+  padding: 2px 4px 4px;
+  border-radius: 0.375rem;
+  background: var(--neutral-100, #F8F9FA);
+
+  & button {
+    cursor: pointer;
+    border: none;
+    padding: 0.3em 0.8em;
+    background-color: transparent;
+    color: var(--neutral-700, #495057);
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1;
+
+    &:hover {
+      color: var(--neutral-900, #212529);
+    }
+
+    &.active {
+      border-radius: 0.25rem;
+      background: var(--white, #FFF);
+      box-shadow: 0 2px 2px 0px rgba(33, 37, 41, 0.15);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      color: var(--neutral-500, #ADB5BD);
+    }
+  }
+}

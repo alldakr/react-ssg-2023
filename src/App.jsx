@@ -1,5 +1,11 @@
-import { LoadingScreen } from '@/components';
-import { Buttons, Greeting, ListRendering, ToggleButtons } from '@/demo';
+import { LoadingScreen, Divider } from '@/components';
+import {
+  Buttons,
+  Greeting,
+  ListRendering,
+  ToggleButtons,
+  ListenNow,
+} from '@/demo';
 
 function App() {
   const isLoading = !true;
@@ -11,9 +17,14 @@ function App() {
   return (
     <div className="App">
       <Greeting />
+      <Divider hidden />
       <Buttons hidden />
+      <Divider />
       <ToggleButtons />
+      <Divider />
       <ListRendering />
+      <Divider size="40px" />
+      <ListenNow hidden />
     </div>
   );
 }
