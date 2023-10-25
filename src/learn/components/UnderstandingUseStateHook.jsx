@@ -1,7 +1,6 @@
 import { Button, IconButton } from '@/components';
 import { getJSONString } from '@/utils';
-import { Helmet } from 'react-helmet-async';
-import useReRender from './hooks/useReRender';
+import useReRender from '../hooks/useReRender';
 
 /* useState 훅 이해를 위해 작성된 임의의 코드 --------------------------------------------- */
 // 참고: https://bit.ly/4719HUO (원문) / https://bit.ly/3QtGfS2 (번역 및 예제 포함)
@@ -48,33 +47,6 @@ function useMyState(initialValue /* 초깃값 */) {
 /* -------------------------------------------------------------------------- */
 
 function UnderstaindUseStateHook() {
-  return (
-    <>
-      <Helmet>
-        <title>Understaind a React&lsquo;s useState Hook</title>
-      </Helmet>
-      <div className="prose">
-        <h3>useState 훅 이해</h3>
-        <p>
-          useState 훅은 마법이 아니라, 배열을 활용하는 데 그 비밀이 있습니다.
-          <br />
-          useState 훅에 대한 이해를 위해 임의로 useMyState 훅을 만들어 작동
-          원리에 대해 이해해봅니다.
-        </p>
-        <p>
-          아래 버튼을 클릭하면 useMyState 훅으로 관리되는 상태에 따라 뷰(view)가
-          업데이트 됩니다.
-        </p>
-
-        <UseMyStateHookDemo />
-      </div>
-    </>
-  );
-}
-
-export default UnderstaindUseStateHook;
-
-function UseMyStateHookDemo() {
   // React 컴포넌트 리-렌더 훅 (유틸리티 함수 반환)
   // - React 뷰 업데이트의 내부 리-렌더링 구조까지 구현하는 것은
   //   매우 복잡하므로 리-렌더링(컴포넌트 재 실행)을 위해 활용
@@ -101,13 +73,34 @@ function UseMyStateHookDemo() {
 
   return (
     <>
+      <h4
+        style={{
+          fontSize: 18,
+          marginBlockStart: 4,
+          marginBlockEnd: 8,
+          color: 'var(--primary--500)',
+        }}
+      >
+        useState 훅의 작동 원리
+      </h4>
+      <p>
+        useState 훅은 마법이 아니라, 배열을 활용하는 데 그 비밀이 있습니다.
+        <br />
+        useState 훅에 대한 이해를 위해 임의로 useMyState 훅을 만들어 작동 원리에
+        대해 이해해봅니다.
+      </p>
+      <p>
+        아래 버튼을 클릭하면 useMyState 훅으로 관리되는 상태에 따라 뷰(view)가
+        업데이트 됩니다.
+      </p>
+
       <div
         style={{
           marginTop: 20,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'flex-start',
-          gap: 12,
+          gap: 4,
         }}
       >
         <Button onClick={handleCount}>{count}</Button>
@@ -130,3 +123,5 @@ function UseMyStateHookDemo() {
     </>
   );
 }
+
+export default UnderstaindUseStateHook;
