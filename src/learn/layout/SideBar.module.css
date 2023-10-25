@@ -29,5 +29,12 @@
     &:hover {
       color: var(--primary--700);
     }
+
+    &.active {
+      color: var(--primary--800);
+      background-color: var(--neutral--100);
+      font-weight: 700;
+    }
   }
 }
+

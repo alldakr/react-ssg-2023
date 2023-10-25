@@ -1,7 +1,7 @@
 import KeepingComponentsPure from './01-keeping-components-pure';
-import RespondingToEvents from './02-responding-to-events';
-import FetchingData from './03-fetching-data';
-import StateIsComponentMemory from './04-state-is-component-memory';
+import StateIsComponentMemory from './02-state-is-component-memory';
+import RespondingToEvents from './03-responding-to-events';
+import FetchingData from './04-fetching-data';
 
 export const navigationList = [
   {

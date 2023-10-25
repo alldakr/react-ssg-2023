@@ -71,6 +71,12 @@ function UnderstaindUseStateHook() {
     reRender(); // 트리거 렌더
   };
 
+  // 컴포넌트 상태 초기화 함수
+  const handleReset = () => {
+    // [미션 1] 컴포넌트 초기화 로직을 작성합니다.
+    // ...
+  };
+
   return (
     <>
       <h4
@@ -94,9 +100,18 @@ function UnderstaindUseStateHook() {
         업데이트 됩니다.
       </p>
 
+      <Button
+        type="button"
+        onClick={handleReset}
+        // [미션 2] 초기 상태인 경우, 버튼이 비활성화되도록 설정합니다.
+        disabled
+      >
+        컴포넌트 초기화
+      </Button>
+
       <div
         style={{
-          marginTop: 20,
+          marginBlockStart: 12,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'flex-start',

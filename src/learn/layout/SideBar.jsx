@@ -10,7 +10,12 @@ function SideBar() {
       <ul>
         {navigationList.map(({ id, title }) => (
           <li key={id}>
-            <NavLink to={getSlug(title)}>{title}</NavLink>
+            <NavLink
+              to={getSlug(title)}
+              className={({ isActive }) => (isActive ? styles.active : null)}
+            >
+              {title}
+            </NavLink>
           </li>
         ))}
       </ul>

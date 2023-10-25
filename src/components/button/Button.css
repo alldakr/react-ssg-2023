@@ -9,9 +9,15 @@
   border-radius: calc(var(--gap, 4px) * 1.5);
   font-weight: 700;
 
-  &:hover {
+  &:hover:not(:disabled) {
     border-color: var(--color-forground);
     background-color: var(--color-forground);
     color: var(--color-background);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    border-color: var(--neutral--300);
+    color: var(--neutral--500);
   }
 }
