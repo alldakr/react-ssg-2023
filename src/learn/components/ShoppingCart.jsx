@@ -46,10 +46,14 @@ function ShoppingCart() {
     }
   };
 
+  const allRemoveCart = () => {
+    setCart([]);
+  };
+
   return (
     <div className={styles.component}>
       <Products items={items} onAdd={addCart} />
-      <Cart cart={cart} onRemove={removeCart} />
+      <Cart cart={cart} onRemove={removeCart} onAllRemove={allRemoveCart} />
     </div>
   );
 }

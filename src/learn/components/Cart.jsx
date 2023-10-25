@@ -7,9 +7,10 @@ import styles from './ShoppingCart.module.css';
 Cart.propTypes = {
   cart: arrayOf(itemType),
   onRemove: func,
+  onAllRemove: func,
 };
 
-function Cart({ cart, onRemove }) {
+function Cart({ cart, onRemove, onAllRemove }) {
   return (
     <section className={styles.cart}>
       <h4>
@@ -62,6 +63,14 @@ function Cart({ cart, onRemove }) {
           </tr>
         </tfoot>
       </table>
+      <button
+        type="button"
+        className={styles.allRemoveButton}
+        disabled={cart.length === 0}
+        onClick={onAllRemove}
+      >
+        장바구니 모두 비우기
+      </button>
     </section>
   );
 }

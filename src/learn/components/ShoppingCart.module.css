@@ -106,9 +106,26 @@
       translate: 50% -50%;
     }
 
-
     .total {
       font-weight: 900;
     }
+
+  }
+  
+  .allRemoveButton {
+    cursor: pointer;
+    margin-block-start: 4px;
+    border: 0;
+    border-radius: 1000px;
+    padding: 0.4em 0.2em;
+    background: var(--neutral--800);
+    color: var(--neutral--300);
+
+    &:disabled {
+      cursor: not-allowed;
+      background: var(--neutral--400);
+      color: var(--neutral--600);
+    }
   }
 }
+
