@@ -10,19 +10,23 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 2px;
-  height: 2px;
+  width: 12px;
+  height: 12px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--neutral--200);
   border-radius: 1000px;
+  background-clip: padding-box;
+  border: 4px solid transparent;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: var(--primary--400);
+  background: var(--primary--300);
+  background-clip: padding-box;
+  border: 4px solid transparent;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--white);
+  background: transparent;
 }
