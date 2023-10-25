@@ -30,6 +30,8 @@ function KeepingComponentsPure() {
 
         <Stack vertical gap={32} style={{ marginBottom: 40 }}>
           <ImpureComponent />
+          <ImpureComponent />
+          <PureComponent renderCount={1} />
           <PureComponent renderCount={1} />
           <LocalMutation />
         </Stack>
@@ -132,7 +134,7 @@ const API_MOVIES = `${API}/collections/movies/records`;
 function SideEffects() {
   // 서버 데이터 요청/응답 관리
   const [status, setStatus] = useState('idle'); // idle, loading, success, error
-  const [data, setData] = useState(null); // null or [{id,title,photo,...}, ...]
+  const [data, setData] = useState(null); // null or [{id,<t></t>itle,photo,...}, ...]
   const [error, setError] = useState(null); // null or Error Object
 
   // 함수 몸체: 순수함을 유지해야 하는 공간(영역)
@@ -142,10 +144,14 @@ function SideEffects() {
     setStatus('loading');
     try {
       // 사이트 이펙트를 처리해도 무방한 공간(영역)
-      const response = await fetch(
-        `${API_MOVIES}?page=1&perPage=10&sort=-release`
-      );
-      const data = await response.json(); //
+      const queryParams = new URLSearchParams({
+        page: 1,
+        perPage: 10,
+        sort: '-created,-release',
+      }).toString();
+      const response = await fetch(`${API_MOVIES}?${queryParams}`);
+      const data = await response.json();
+
       setStatus('success');
       setData(data);
     } catch (error) {
@@ -174,25 +180,17 @@ function SideEffects() {
     setCount(count + 1);
   };
 
-  if (status === 'loading') {
-    return <div role="alert">무비 데이터 요청 중...</div>;
-  }
+  // if (status === 'loading') {
+  //   return <div role="alert">무비 데이터 요청 중...</div>;
+  // }
 
-  if (status === 'error') {
-    return <div role="alert">{error.toString()}</div>;
-  }
+  // if (status === 'error') {
+  //   return <div role="alert">{error.toString()}</div>;
+  // }
 
   return (
     <>
-      <Stack gap={8}>
-        <div>
-          <Button onClick={handleRequestMovieData}>영화 정보 요청</Button>
-          <ul>
-            {data?.items?.map((movieItem) => (
-              <li key={movieItem.id}>{movieItem.title}</li>
-            ))}
-          </ul>
-        </div>
+      <Stack gap={8} style={{ alignItems: 'center' }}>
         <Button onClick={decrementCount} style={buttonStyle}>
           -1
         </Button>
@@ -215,6 +213,25 @@ function SideEffects() {
           <li key={i}>{item}</li>
         ))}
       </ul>
+
+      <div>
+        <Button onClick={handleRequestMovieData}>영화 정보 요청</Button>
+        {status === 'loading' ? (
+          <div role="alert" style={{ marginBlock: 12 }}>
+            무비 데이터 요청 중...
+          </div>
+        ) : status === 'error' ? (
+          <div role="alert" style={{ marginBlock: 12 }}>
+            {error.toString()}
+          </div>
+        ) : (
+          <ul style={{ paddingLeft: '1.1rem' }}>
+            {data?.items?.map((movieItem) => (
+              <li key={movieItem.id}>{movieItem.title}</li>
+            ))}
+          </ul>
+        )}
+      </div>
     </>
   );
 }

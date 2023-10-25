@@ -1,4 +1,6 @@
 .prose {
+  overflow: auto;
+  width: calc(100vw - 280px);
   padding: 4px 24px;
 
   & h3 {
