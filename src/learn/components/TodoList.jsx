@@ -15,6 +15,12 @@ TodoList.propTypes = {
 function TodoList({ data = [] }) {
   const [todos] = useState(data);
 
+  // [미션 1] 사용자 입력 내용을 추가하면 할 일 목록에 추가되도록 설정합니다.
+  // ...
+
+  // [미션 2] 사용자가 할 일을 체크 또는 체크 해제하면 상태를 변경합니다.
+  // ...
+
   return (
     <div className={styles.component}>
       <h4>할 일 추가</h4>

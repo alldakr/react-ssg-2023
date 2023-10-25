@@ -1,0 +1,45 @@
+.component {
+
+  & h4 {
+    font-size: 18px;
+    margin-block-start: 8px;
+    margin-block-end: 8px;
+    color: var(--primary--500);
+  }
+
+  & label {
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    translate: -4px;
+
+    & input {
+      accent-color: var(--primary--500);
+    }
+  }
+
+  & ol {
+    list-style: none;
+    padding-left: 0;
+
+    display: flex;
+    flex-flow: column;
+    gap: 4px;
+
+    & li {
+      & button {
+        vertical-align: baseline;
+      }
+      & span {
+        user-select: none;
+        width: 108px;
+        border-radius: 1000px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--neutral--300);
+        color: var(--neutral--600);
+      }
+    }
+  }
+}

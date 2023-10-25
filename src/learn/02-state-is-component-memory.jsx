@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import UnderstaindUseStateHook from './components/UnderstandingUseStateHook';
+import ReadWriteInLocalStorage from './components/ReadWriteInLocalStorage';
 
 function StateIsComponentMemory() {
   return (
@@ -22,6 +23,7 @@ function StateIsComponentMemory() {
         </pre>
 
         <UnderstaindUseStateHook />
+        <ReadWriteInLocalStorage />
       </div>
     </>
   );
