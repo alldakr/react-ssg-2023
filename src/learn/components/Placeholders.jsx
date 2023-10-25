@@ -14,7 +14,7 @@ export function Placeholder({ width = 220, height = 20, text = 'PHOTO' }) {
 
 export function ContentsPlaceholder() {
   return (
-    <div
+    <span
       style={{
         display: 'flex',
         flexDirection: 'column',
@@ -26,6 +26,6 @@ export function ContentsPlaceholder() {
       <img style={{ height: 12 }} src="https://placehold.co/280x12?text=_" />
       <img style={{ height: 12 }} src="https://placehold.co/260x12?text=_" />
       <img style={{ height: 12 }} src="https://placehold.co/192x12?text=_" />
-    </div>
+    </span>
   );
 }

@@ -2,6 +2,7 @@ import KeepingComponentsPure from './01-keeping-components-pure';
 import StateIsComponentMemory from './02-state-is-component-memory';
 import RespondingToEvents from './03-responding-to-events';
 import FetchingData from './04-fetching-data';
+import StateAsSnapshot from './05-state-as-a-snaphost';
 
 export const navigationList = [
   {
@@ -23,5 +24,10 @@ export const navigationList = [
     id: 'learn-fetching-data',
     title: '데이터 가져오기',
     PageElement: FetchingData,
+  },
+  {
+    id: 'state-as-a-snapshot',
+    title: '상태는 스냅샷처럼 작동',
+    PageElement: StateAsSnapshot,
   },
 ];
