@@ -1,0 +1,12 @@
+.component {
+  --gap: 10px;
+  --square-size: 80px;
+
+  display: grid;
+  grid-template: repeat(3, var(--square-size)) / repeat(3, 1fr);
+  gap: var(--gap);
+  width: calc(var(--square-size) * 3);
+  border: 4px solid var(--neutral--300);
+  border-radius: 8px;
+  padding: var(--gap);
+}
