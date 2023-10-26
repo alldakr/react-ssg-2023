@@ -20,7 +20,7 @@ function RespondingToEvents() {
           - 이벤트 핸들러에서 속성(prop) 읽기
           - 이벤트 핸들러를 속성으로 전달
           - 이벤트 핸들러 속성 이름 지정
-          - 이벤트 기본 동작 방지
+          - 이벤트 기본 동작 방지(prevent event)
         */}
         <TodoList
           data={[
@@ -32,7 +32,7 @@ function RespondingToEvents() {
         {/* 
           이벤트 전파에 대해 이해하고 처리하는 방법을 학습합니다.
           - 이벤트 전파
-          - 이벤트 전파 중지
+          - 이벤트 전파 중지(stop propagation)
           - 이벤트 전파 대안: 핸들러 전달
         */}
         <EventPropagation />
