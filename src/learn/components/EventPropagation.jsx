@@ -9,7 +9,7 @@ function EventPropagation() {
 
   return (
     <div className={styles.component}>
-      <h4>이벤트 전파</h4>
+      <h4>이벤트 전파 (할 일 갯수: 4)</h4>
       <p>
         이벤트 핸들러는 컴포넌트가 가질 수 있는 모든 하위 이벤트도 감지합니다.
       </p>

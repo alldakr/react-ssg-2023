@@ -44,7 +44,17 @@ function TodoList({ data = [] }) {
   };
 
   // [미션 2] 사용자가 할 일을 체크 또는 체크 해제하면 상태를 변경합니다.
-  // ...
+  const handleToggleCheckedTodo = (todoId) => (e) => {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === todoId) {
+          return { ...todo, done: e.currentTarget.checked };
+        } else {
+          return todo;
+        }
+      })
+    );
+  };
 
   return (
     <div className={styles.component}>
@@ -66,7 +76,11 @@ function TodoList({ data = [] }) {
         {todos?.map((todo) => (
           <li key={todo.id}>
             <label className={todo.done ? styles.done : ''}>
-              <input type="checkbox" checked={todo.done} readOnly />
+              <input
+                type="checkbox"
+                checked={todo.done}
+                onChange={handleToggleCheckedTodo(todo.id)}
+              />
               {todo.doit}
             </label>
           </li>
