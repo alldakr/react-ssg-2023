@@ -20,7 +20,10 @@ function createSetter(cursor) {
   };
 }
 
-// 임의로 작성된 useState 훅
+// 임의로 작성된 useState 훅 (특별한 함수: 함수 이름이 use로 시작)
+// 훅의 작성 규칙
+// 1. 오직 함수 컴포넌트와 훅 함수 내부에서만 사용 가능
+// 2. 조건, 반복 문 안에서 사용할 수 없음
 function useMyState(initialValue /* 초깃값 */) {
   // setters.length와 cursor 값이 동일한 경우
   if (stateAndSetters.length === cursor) {
@@ -75,6 +78,9 @@ function UnderstaindUseStateHook() {
   const handleReset = () => {
     // [미션 1] 컴포넌트 초기화 로직을 작성합니다.
     // ...
+    stateAndSetters.length = 0;
+    cursor = 0;
+    reRender(); // 렌더 트리거
   };
 
   return (
@@ -103,8 +109,8 @@ function UnderstaindUseStateHook() {
       <Button
         type="button"
         onClick={handleReset}
-        // [미션 2] 초기 상태인 경우, 버튼이 비활성화되도록 설정합니다.
-        disabled
+        // [미션 2 초기 상태인 경우, 버튼이 비활성화되도록 설정합니다.
+        disabled={count === 0 && stars === '⭐️'}
       >
         컴포넌트 초기화
       </Button>
