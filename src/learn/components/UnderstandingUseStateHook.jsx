@@ -38,7 +38,7 @@ function useMyState(initialValue /* 초깃값 */) {
   const [state, setter] = stateAndSetters[cursor];
 
   // 로그
-  console.log(cursor, [state, setter]);
+  // console.log(cursor, [state, setter]);
 
   // cursor 값 변경
   cursor++;
