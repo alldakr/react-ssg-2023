@@ -1,0 +1,5 @@
+.component {
+  border: 4px solid var(--neutral--300);
+  padding: 12px;
+  font-size: 13px;  
+}
