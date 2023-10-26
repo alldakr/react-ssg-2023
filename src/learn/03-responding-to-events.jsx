@@ -1,8 +1,39 @@
+import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import TodoList from './components/TodoList';
 import EventPropagation from './components/EventPropagation';
 
 function RespondingToEvents() {
+  const [todos, setTodos] = useState([
+    { id: 'todo-1', doit: '주간 독서', done: false },
+    { id: 'todo-2', doit: '주말 자전거 트래킹', done: true },
+  ]);
+
+  const handleAddTodo = (userInput) => (e) => {
+    e.preventDefault();
+
+    const newTodo = {
+      id: `todo-${todos.length + 1}`,
+      doit: userInput,
+      done: false,
+    };
+
+    setTodos([newTodo, ...todos]);
+    // setUserInput('');
+  };
+
+  const handleToggleCheckedTodo = (todoId) => (e) => {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === todoId) {
+          return { ...todo, done: e.currentTarget.checked };
+        } else {
+          return todo;
+        }
+      })
+    );
+  };
+
   return (
     <>
       <Helmet>
@@ -23,10 +54,9 @@ function RespondingToEvents() {
           - 이벤트 기본 동작 방지(prevent event)
         */}
         <TodoList
-          data={[
-            { id: 'todo-1', doit: '주간 독서', done: false },
-            { id: 'todo-2', doit: '주말 자전거 트래킹', done: true },
-          ]}
+          data={todos}
+          onAdd={handleAddTodo}
+          onToggleChecked={handleToggleCheckedTodo}
         />
 
         {/* 
