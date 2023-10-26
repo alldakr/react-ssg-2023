@@ -6,9 +6,10 @@
   & ol {
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 260px;
-    margin: 10px 0;
-    padding-left: 10px;
+    height: 240px;
+    width: 90px;
+    margin: 10px 0 0;
+    padding: 0 4px 18px 14px;
     list-style: none;
 
     display: flex;

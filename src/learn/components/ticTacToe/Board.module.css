@@ -3,6 +3,7 @@
   --square-size: 80px;
 
   display: grid;
+  align-self: flex-start;
   grid-template: repeat(3, var(--square-size)) / repeat(3, 1fr);
   gap: var(--gap);
   width: calc(var(--square-size) * 3);
