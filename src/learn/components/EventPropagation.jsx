@@ -13,7 +13,11 @@ function EventPropagation() {
       <p>
         이벤트 핸들러는 컴포넌트가 가질 수 있는 모든 하위 이벤트도 감지합니다.
       </p>
-      <Box onLog={handleLog} tag="grand parent" style={{ marginTop: 12 }}>
+      <Box
+        onLog={handleLog}
+        tag="grand parent"
+        style={{ marginTop: 12, width: 220 }}
+      >
         <Box onLog={handleLog} tag="parent">
           <Box onLog={handleLog} tag="child" />
         </Box>

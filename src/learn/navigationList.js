@@ -4,6 +4,7 @@ import RespondingToEvents from './03-responding-to-events';
 import FetchingData from './04-fetching-data';
 import StateAsSnapshot from './05-state-as-a-snaphost';
 import MakingTicTacToeGame from './06-making-tic-tac-toe-game';
+import PassingDataDeeplywithContext from './07-passing-data-deeply-with-context';
 
 export const navigationList = [
   {
@@ -35,5 +36,10 @@ export const navigationList = [
     id: 'making-tic-tac-toe-game',
     title: '틱택토 게임 만들기',
     PageElement: MakingTicTacToeGame,
+  },
+  {
+    id: 'passing-data-deeply-with-context',
+    title: '컨텍스트 활용(상태 공급)',
+    PageElement: PassingDataDeeplywithContext,
   },
 ];
