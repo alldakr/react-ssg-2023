@@ -6,7 +6,7 @@ import EventPropagation from './components/EventPropagation';
 // 상태 끌어올리기 이후, 다뤄야 할 주제는 다음과 같습니다.
 // - [x] 하위 컴포넌트의 상태 변경 방법
 // - [x] 디바운싱 또는 쓰로틀링 (불필요한 리-렌더링 개선)
-// - [ ] React를 사용하지 않고 "할 일 추가"하는 방법
+// - [x] React를 사용하지 않고 "할 일 추가"하는 방법 (답변: 선언형 프로그래밍 대신에 명령형 프로그래밍을 하면 됨) + 고차 컴포넌트(HOF, HOC)
 // - [ ] "할 일 삭제" 기능 추가
 
 function RespondingToEvents() {
