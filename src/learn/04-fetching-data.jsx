@@ -10,12 +10,6 @@ import useFetchData from '@/hooks/useFetchData';
 // 로딩 상태 처리 필수
 
 function FetchingData() {
-  const state = useFetchData(
-    'https://y-movies.pockethost.io/api/collections/movies/records'
-  );
-
-  console.log(state);
-
   return (
     <>
       <Helmet>

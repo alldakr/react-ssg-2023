@@ -15,8 +15,10 @@ function useFetchData(endpoint /* string */, initialData = null) {
 
   // 이펙트 관리: useEffect
   // - 네트워크 요청/응답
+  // - 중복 요청인 경우 이전 요청 취소: AbortController
   useEffect(() => {
-    console.log('fetcing data');
+    // 중복 요청 취소를 위한 컨트롤러 생성
+    const controller = new AbortController();
 
     // 아래처럼 업데이트 하면 안 됨
     // [x] setState(nextState);
@@ -28,6 +30,7 @@ function useFetchData(endpoint /* string */, initialData = null) {
 
     // Promise API 활용
     fetch(endpoint, {
+      signal: controller.signal,
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -48,6 +51,10 @@ function useFetchData(endpoint /* string */, initialData = null) {
           error,
         }));
       });
+
+    return /* cleanup */ () => {
+      controller.abort();
+    };
   }, [endpoint]);
 
   // 훅 함수의 반환 값
