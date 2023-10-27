@@ -5,7 +5,7 @@
 
 import { useEffect, useState } from 'react';
 
-function useFetchData(endpoint /* string */, initialData = null, options = {}) {
+function useFetchData(endpoint /* string */, initialData = null) {
   // 상태 관리: useState
   const [state, setState] = useState({
     status: 'idle',
@@ -16,10 +16,15 @@ function useFetchData(endpoint /* string */, initialData = null, options = {}) {
   // 이펙트 관리: useEffect
   // - 네트워크 요청/응답
   useEffect(() => {
-    setState({
-      ...state,
+    console.log('fetcing data');
+
+    // 아래처럼 업데이트 하면 안 됨
+    // [x] setState(nextState);
+    // [o] setState((prevState) => nextState)
+    setState((prevState) => ({
+      ...prevState,
       status: 'loading',
-    });
+    }));
 
     // Promise API 활용
     fetch(endpoint, {
@@ -27,23 +32,23 @@ function useFetchData(endpoint /* string */, initialData = null, options = {}) {
       headers: {
         'Content-Type': 'application/json',
       },
-      ...options,
     })
       .then((response) => response.json())
       .then((data) => {
-        setState({
-          ...state,
+        setState((prevState) => ({
+          ...prevState,
           status: 'success',
-          data, // data: data (1997 ~ 2014)
-        });
+          data,
+        }));
       })
       .catch((error) => {
-        setState({
-          ...state,
+        setState((prevState) => ({
+          ...prevState,
+          status: 'success',
           error,
-        });
+        }));
       });
-  }, [endpoint, options, state]);
+  }, [endpoint]);
 
   // 훅 함수의 반환 값
   return state; /* { status, error, data } */

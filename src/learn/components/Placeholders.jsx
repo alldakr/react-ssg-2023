@@ -23,9 +23,21 @@ export function ContentsPlaceholder() {
         marginTop: 8,
       }}
     >
-      <img style={{ height: 12 }} src="https://placehold.co/280x12?text=_" />
-      <img style={{ height: 12 }} src="https://placehold.co/260x12?text=_" />
-      <img style={{ height: 12 }} src="https://placehold.co/192x12?text=_" />
+      <img
+        style={{ height: 12 }}
+        src="https://placehold.co/280x12?text=_"
+        alt=""
+      />
+      <img
+        style={{ height: 12 }}
+        src="https://placehold.co/260x12?text=_"
+        alt=""
+      />
+      <img
+        style={{ height: 12 }}
+        src="https://placehold.co/192x12?text=_"
+        alt=""
+      />
     </span>
   );
 }
