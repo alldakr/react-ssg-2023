@@ -1,11 +1,14 @@
 import { node } from 'prop-types';
-import SideBar from './SideBar';
+import Stack from '../components/Stack';
 import Footer from './Footer';
 import Header from './Header';
 import Main from './Main';
-import Stack from '../components/Stack';
+import SideBar from './SideBar';
+import useHTMLValidate from '@/hooks/useHTMLValidate';
 
 export function RootLayout({ sideBar }) {
+  useHTMLValidate();
+
   return (
     <>
       <Header />

@@ -20,10 +20,9 @@ function TicTacToeGame() {
   const winner = checkWinner(currentBoard);
   const isDraw = !winner && currentBoard.every(Boolean);
 
-  console.log(nextPlayer);
-
   const playGame = (nextIndex) => () => {
     if (winner) return alert('GAME OVER');
+
     const nextGameIndex = gameIndex + 1;
     setBoards((boards) => [
       ...boards.slice(0, nextGameIndex),
