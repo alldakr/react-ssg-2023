@@ -3,6 +3,11 @@ import { Helmet } from 'react-helmet-async';
 import TodoList from './components/TodoList';
 import EventPropagation from './components/EventPropagation';
 
+// 상태 끌어올리기 이후, 다뤄야 할 주제
+// - 하위 컴포넌트의 상태 변경 방법
+// - 디바운싱 또는 쓰로틀링 (불필요한 리-렌더링 개선)
+// - React를 사용하지 않고 "할 일 추가"하는 방법
+
 function RespondingToEvents() {
   const [todos, setTodos] = useState([
     { id: 'todo-1', doit: '주간 독서', done: false },
