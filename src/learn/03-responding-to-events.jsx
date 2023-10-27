@@ -3,10 +3,11 @@ import { Helmet } from 'react-helmet-async';
 import TodoList from './components/TodoList';
 import EventPropagation from './components/EventPropagation';
 
-// 상태 끌어올리기 이후, 다뤄야 할 주제
-// - 하위 컴포넌트의 상태 변경 방법
-// - 디바운싱 또는 쓰로틀링 (불필요한 리-렌더링 개선)
-// - React를 사용하지 않고 "할 일 추가"하는 방법
+// 상태 끌어올리기 이후, 다뤄야 할 주제는 다음과 같습니다.
+// - [x] 하위 컴포넌트의 상태 변경 방법
+// - [ ] 디바운싱 또는 쓰로틀링 (불필요한 리-렌더링 개선)
+// - [ ] React를 사용하지 않고 "할 일 추가"하는 방법
+// - [ ] "할 일 삭제" 기능 추가
 
 function RespondingToEvents() {
   const [todos, setTodos] = useState([
@@ -14,9 +15,7 @@ function RespondingToEvents() {
     { id: 'todo-2', doit: '주말 자전거 트래킹', done: true },
   ]);
 
-  const handleAddTodo = (userInput) => (e) => {
-    e.preventDefault();
-
+  const handleAddTodo = (userInput) => {
     const newTodo = {
       id: `todo-${todos.length + 1}`,
       doit: userInput,
@@ -24,7 +23,6 @@ function RespondingToEvents() {
     };
 
     setTodos([newTodo, ...todos]);
-    // setUserInput('');
   };
 
   const handleToggleCheckedTodo = (todoId) => (e) => {
@@ -51,13 +49,6 @@ function RespondingToEvents() {
           함수입니다.
         </p>
 
-        {/* 
-          이벤트 응답으로 사용자와 상호작용하는 TodoList를 구현합니다. 
-          - 이벤트 핸들러에서 속성(prop) 읽기
-          - 이벤트 핸들러를 속성으로 전달
-          - 이벤트 핸들러 속성 이름 지정
-          - 이벤트 기본 동작 방지(prevent event)
-        */}
         <TodoList
           data={todos}
           onAdd={handleAddTodo}
