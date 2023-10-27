@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { arrayOf, bool, func, shape, string } from 'prop-types';
 import styles from './TodoList.module.css';
+import { debounce } from '@/utils';
 
 TodoList.propTypes = {
   data: arrayOf(
@@ -20,7 +21,9 @@ function TodoList({ data = [], onAdd, onToggleChecked }) {
   const [userInput, setUserInput] = useState('');
 
   const handleInputTodo = (e) => {
-    setUserInput(e.currentTarget.value);
+    // [x] e.currentTarget => null
+    // [o] e.target => <input />
+    setUserInput(e.target.value);
   };
 
   const resetInputTodo = () => {
@@ -44,8 +47,8 @@ function TodoList({ data = [], onAdd, onToggleChecked }) {
           할 일
         </label>
         <input
-          value={userInput}
-          onChange={handleInputTodo}
+          defaultValue={userInput}
+          onChange={debounce(handleInputTodo)}
           type="text"
           id="addTodo"
           placeholder="예) 아침 조깅"
