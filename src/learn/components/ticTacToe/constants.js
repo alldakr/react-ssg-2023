@@ -1,3 +1,5 @@
+import { arrayOf, number, oneOf, shape } from 'prop-types';
+
 // 보드 게임 말(알)
 export const PLAYER1 = '⏺';
 export const PLAYER2 = '×';
@@ -33,3 +35,13 @@ export const checkWinner = (squares) => {
 
   return winner;
 };
+
+// 타입 검사를 위한 타입
+export const PLAYER_TYPE = oneOf([PLAYER1, PLAYER2]);
+
+export const SQUARES_TYPE = arrayOf(PLAYER_TYPE);
+
+export const WINNER_TYPE = shape({
+  palyer: PLAYER_TYPE,
+  pattern: arrayOf(number),
+});
