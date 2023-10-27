@@ -1,14 +1,22 @@
-import { func, node } from 'prop-types';
+import { func, node, string } from 'prop-types';
 import styles from './Square.module.css';
 
 Square.propTypes = {
   children: node,
+  className: string,
   onClick: func,
 };
 
-function Square({ children, onClick }) {
+function Square({ children, className, onClick }) {
+  const classNames = `${styles.component} ${className}`.trim();
+
   return (
-    <button type="button" className={styles.component} onClick={onClick}>
+    <button
+      type="button"
+      className={classNames}
+      onClick={onClick}
+      disabled={children}
+    >
       {children}
     </button>
   );

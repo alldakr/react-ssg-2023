@@ -10,6 +10,12 @@
   color: var(--neutral--700);
   font-size: 48px;
 
+  &.winner {
+    background-color: var(--primary--200);
+    border-color: currentColor;
+    color: var(--primary--500);
+  }
+
   &:hover:not(:disabled) {
     background-color: var(--neutral--100);
   }

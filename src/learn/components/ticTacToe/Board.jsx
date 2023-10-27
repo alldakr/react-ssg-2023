@@ -1,13 +1,8 @@
 import { useState } from 'react';
 import styles from './Board.module.css';
+import squareStyles from './Square.module.css';
 import Square from './Square';
-
-// 보드 게임 말(알)
-const PLAYER1 = '⏺';
-const PLAYER2 = '×';
-
-// 초기 사각형 집합
-const INITIAL_SQUARES = Array(9).fill(null);
+import { INITIAL_SQUARES, PLAYER1, PLAYER2, checkWinner } from './constants';
 
 function Board() {
   // 상태(state)
@@ -16,11 +11,13 @@ function Board() {
 
   // 파생된 상태(derived state)
   const nextPlayer = gameIndex % 2 === 0 ? PLAYER1 : PLAYER2;
-
-  console.log(nextPlayer);
+  const winner = checkWinner(squares);
 
   // 사용자가 보드의 스퀘어를 클릭하면 실행
   const playGame = (squareIndex /* 클릭한 스퀘어 인덱스 */) => () => {
+    // 게임 승자가 있으면 게임 종료를 알림
+    if (winner) return alert('GAME OVER');
+
     // 다음 게임 턴의 순서
     const nextGameIndex = gameIndex + 1;
 
@@ -38,8 +35,19 @@ function Board() {
   return (
     <div className={styles.component}>
       {squares.map((square, index) => {
+        let winnerStyle = '';
+
+        if (winner) {
+          for (const winnerIndex of winner.pattern) {
+            if (index === winnerIndex) {
+              winnerStyle = squareStyles.winner;
+              break;
+            }
+          }
+        }
+
         return (
-          <Square key={index} onClick={playGame(index)}>
+          <Square key={index} className={winnerStyle} onClick={playGame(index)}>
             {square}
           </Square>
         );
